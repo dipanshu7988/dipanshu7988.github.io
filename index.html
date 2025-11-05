@@ -1,42 +1,125 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Security Website Project</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PROJECT_TITLE — COLLEGE_NAME</title>
+  <meta name="description" content="Security website project demo.">
   <style>
-    body {font-family: Arial, sans-serif; background:#0f172a; color:#f8fafc; margin:0; padding:0;}
-    header {background:#1e293b; text-align:center; padding:20px;}
-    header h1 {color:#38bdf8; margin:0;}
-    section {padding:20px;}
-    .card {background:#1e293b; padding:15px; border-radius:10px; margin-bottom:20px;}
-    footer {text-align:center; background:#1e293b; color:#94a3b8; padding:10px;}
+    :root{
+      --bg:#071022; --card:#0f1724; --accent:#0ea5a6; --muted:#9aa6b2; --white:#eef2f6;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#071225 0%,#061022 100%);color:var(--white);-webkit-font-smoothing:antialiased}
+    header{padding:28px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#006b6b);display:flex;align-items:center;justify-content:center;font-weight:700;color:#041919}
+    .title h1{margin:0;font-size:20px}
+    .title p{margin:3px 0 0;color:var(--muted);font-size:13px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-size:14px}
+    main{display:grid;grid-template-columns:1fr 380px;gap:28px;padding:18px;align-items:start}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+    h2{margin:0 0 10px}
+    .lead{color:var(--muted);margin-bottom:14px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+    .feature{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02)}
+    .contact-form{display:flex;flex-direction:column;gap:10px}
+    input,textarea,select{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--white);outline:none}
+    .btn{padding:10px 14px;border-radius:8px;background:var(--accent);color:#042a2a;border:none;cursor:pointer;font-weight:600}
+    footer{padding:18px 20px;color:var(--muted);font-size:13px;text-align:center}
+    @media(max-width:900px){main{grid-template-columns:1fr} .features{grid-template-columns:1fr}}
+    .muted{color:var(--muted)}
   </style>
 </head>
 <body>
   <header>
-    <h1>SecureGuard</h1>
-    <p>College Project – Security Services Website</p>
+    <div class="brand">
+      <div class="logo">SG</div>
+      <div class="title">
+        <!-- EDIT THESE TWO LINES: put your college & project name -->
+        <h1>Smart Security Website</h1>
+<p class="muted">Chandigarh University — AI-ML B.Tech Project</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
-  <section>
-    <div class="card">
-      <h2>About Us</h2>
-      <p>This is a demo security website made by Dipanshu for a college project.</p>
-    </div>
-    <div class="card">
-      <h2>Our Services</h2>
-      <ul>
-        <li>CCTV Installation</li>
-        <li>Security Guard Services</li>
-        <li>Cybersecurity Advice</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h2>Contact Us</h2>
-      <p>Email: securityproject@example.com</p>
-      <p>Phone: +91 99999 99999</p>
-    </div>
-  </section>
-  <footer>©️ 2025 SecureGuard Project | Made by Dipanshu</footer>
+
+  <main>
+    <section>
+      <div class="card">
+        <h2>SecureGuard — Professional Security Solutions</h2>
+        <p class="lead">Student project demo: CCTV, guard services, risk assessments and consultancy. Designed and deployed for college submission.</p>
+
+        <div id="services">
+          <h3 style="margin-top:6px">Our Services</h3>
+          <div class="features">
+            <div class="feature"><strong>CCTV & Surveillance</strong><div class="muted">Camera systems, remote monitoring and cloud storage options.</div></div>
+            <div class="feature"><strong>Security Guards</strong><div class="muted">Trained staff for events, sites and corporate premises.</div></div>
+            <div class="feature"><strong>Risk Assessment</strong><div class="muted">Site audits, vulnerability reports and remediation plans.</div></div>
+          </div>
+        </div>
+
+        <div id="about" style="margin-top:18px">
+          <h3>About this project</h3>
+          <p class="muted">This website is a demonstration for a college project. It shows a professional landing page, contact form, and service descriptions. For production, include real credentials and privacy policy.</p>
+          <p style="margin-top:10px"><strong>Team / Author:</strong> Dipanshu (replace or add teammates)</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:14px">
+        <h3>Download Brochure (demo)</h3>
+        <p class="muted">Attach a PDF file to the repository (e.g., brochure.pdf) and update the link below to allow visitors to download it.</p>
+        <a class="btn" href="#" id="downloadBtn" onclick="alert('For the project, upload brochure.pdf to the repo and update the link in the HTML.')">Download Brochure</a>
+      </div>
+    </section>
+
+    <aside class="card">
+      <h3>Free Consultation</h3>
+      <p class="muted">Fill the form and we’ll contact you. (This uses Formspree or Mailto method — see instructions below.)</p>
+
+      <!-- ====== CONTACT FORM (Option: Formspree) ======
+           To use Formspree: sign up at https://formspree.io, create a form and replace the action URL (the value of action="...") with their endpoint.
+           Example action: action="https://formspree.io/f/yourformid"
+           ====== If you don't configure Formspree, the form will not send. See instructions below. -->
+      <form id="contact" class="contact-form card" method="POST" action="https://formspree.io/f/xgvpgarz">
+        <input name="name" placeholder="Full name" required />
+        <input name="email" type="email" placeholder="Email" required />
+        <input name="phone" placeholder="Phone / WhatsApp" />
+        <textarea name="message" placeholder="Brief description (site, needs)"></textarea>
+        <div style="display:flex;gap:8px">
+          <button class="btn" type="submit">Send Request</button>
+          <button class="btn" type="button" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white)" onclick="prefillDemo()">Prefill</button>
+        </div>
+        <div style="font-size:12px;color:var(--muted);margin-top:8px">Form action uses Formspree: replace <code>YOUR_FORM_ID</code> with your actual ID to receive messages.</div>
+      </form>
+
+      <div style="margin-top:12px;color:var(--muted);font-size:13px">
+        <strong>Quick form options</strong>
+        <ul style="margin:6px 0 0 18px;color:var(--muted)">
+          <li>Option A (recommended): Use Formspree (free) — receives form submissions to your email.</li>
+          <li>Option B: Replace form with <code>mailto:you@example.com</code> link (opens email client).</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    ©️ <span id="year"></span> PROJECT_TITLE • COLLEGE_NAME • Made by Dipanshu — Demo for college submission
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function prefillDemo(){
+      document.querySelector('input[name="name"]').value = 'Dipanshu';
+      document.querySelector('input[name="email"]').value = 'you@example.com';
+      document.querySelector('input[name="phone"]').value = '+91 99999 99999';
+      document.querySelector('textarea[name="message"]').value = 'Requesting site inspection/demo for college project.';
+    }
+  </script>
 </body>
 </html>
